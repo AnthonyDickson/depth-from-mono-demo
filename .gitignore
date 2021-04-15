@@ -1,0 +1,7 @@
+built/
+dist/
+dist/videos/
+node_modules/
+*.swp
+.DS_STORE
+Session.vim

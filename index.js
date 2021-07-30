@@ -52677,14 +52677,15 @@ const imageSets = {
     //     'https://www.flickr.com/photos/hapephotographix/51114732965/in/pool-equirectangular/',
     //     new THREE.SphereGeometry(10, 256, 256)
     // ),
-    chapel: new ImageSet('./images/chapel_equirectangular.jpg', './images/chapel_equirectangular.png', 'https://www.flickr.com/photos/hapephotographix/50947196346/in/pool-equirectangular/', new three__WEBPACK_IMPORTED_MODULE_0__["SphereGeometry"](10, 256, 256)),
+    chapel: new ImageSet('./images/chapel_equirectangular.jpg', './images/chapel_equirectangular.png', 'https://www.flickr.com/photos/hapephotographix/50947196346/in/pool-equirectangular/', new three__WEBPACK_IMPORTED_MODULE_0__["SphereGeometry"](5, 256, 256)),
 };
 let imageSet = imageSets.chapel;
 // TODO: Allow image set to be changed by user via keyboard shortcuts.
 // TODO: Display source image url.
 // TODO: WASD controls.
-const minAngle = Math.PI / 4;
-const maxAngle = Math.PI * 3 / 4;
+// TODO: Do we really need to limit the viewing angle?
+const minAngle = 0;
+const maxAngle = Math.PI;
 window.onload = () => {
     init();
     animate();

@@ -22,4 +22,4 @@ npm start
     git commit -m "Your commit message here"
     git push
     ```
-2. Reload <GitHub Username>.github.io/<Repository name> and it should show the updated contents.
+2. Reload \<GitHub Username>.github.io/\<Repository name> and it should show the updated contents.

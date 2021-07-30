@@ -31,7 +31,7 @@ const imageSets = {
         './images/chapel_equirectangular.jpg',
         './images/chapel_equirectangular.png',
         'https://www.flickr.com/photos/hapephotographix/50947196346/in/pool-equirectangular/',
-        new THREE.SphereGeometry(5, 256, 256)
+        new THREE.SphereGeometry(7, 512, 512)
     ),
     // campus: new ImageSet(
     //     './static/campusR_cropped.jpg',
@@ -57,7 +57,7 @@ let imageSet = imageSets.chapel;
 // TODO: Display source image url.
 // TODO: WASD controls.
 // TODO: Do we really need to limit the viewing angle?
-const minAngle = 0;
+const minAngle = Math.PI / 4;
 const maxAngle = Math.PI;
 
 window.onload = () => {
@@ -157,8 +157,8 @@ function animate() {
     controls.update();
     // Set initial camera rotation to be looking at the 'horizon' since it defaults to looking straight at the ground
     // (the world origin).
-    camera.rotateX((maxAngle - minAngle) / 2);
     camera.position.copy(initialCameraPosition);
+    camera.rotateX((maxAngle - minAngle) / 2);
 }
 
 document.addEventListener("keydown", onDocumentKeyDown, false);

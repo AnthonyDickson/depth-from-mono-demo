@@ -52671,9 +52671,15 @@ class ImageSet {
 }
 // Good source of equirectangular 360 degree images: https://www.flickr.com/groups/equirectangular/pool/
 const imageSets = {
-    market: new ImageSet('./images/market.jpg', './images/market-depth.png', 'https://www.flickr.com/photos/hapephotographix/51114732965/in/pool-equirectangular/', new three__WEBPACK_IMPORTED_MODULE_0__["SphereGeometry"](10, 256, 256)),
+    // market: new ImageSet(
+    //     './images/market.jpg',
+    //     './images/market-depth.png',
+    //     'https://www.flickr.com/photos/hapephotographix/51114732965/in/pool-equirectangular/',
+    //     new THREE.SphereGeometry(10, 256, 256)
+    // ),
+    chapel: new ImageSet('./images/chapel_equirectangular.jpg', './images/chapel_equirectangular.png', 'https://www.flickr.com/photos/hapephotographix/50947196346/in/pool-equirectangular/', new three__WEBPACK_IMPORTED_MODULE_0__["SphereGeometry"](10, 256, 256)),
 };
-let imageSet = imageSets.market;
+let imageSet = imageSets.chapel;
 // TODO: Allow image set to be changed by user via keyboard shortcuts.
 // TODO: Display source image url.
 // TODO: WASD controls.
@@ -52760,13 +52766,17 @@ function onDocumentKeyDown(event) {
     }
 }
 function render() {
-    // If we are not presenting move the camera a little so the effect is visible
-    if (renderer.xr.isPresenting === false) {
-        const time = clock.getElapsedTime();
-        sphere.rotation.y += 0.001;
-        sphere.position.x = Math.sin(time) * 0.2;
-        sphere.position.z = Math.cos(time) * 0.2;
-    }
+    // // If we are not presenting move the camera a little so the effect is visible
+    //
+    // if (renderer.xr.isPresenting === false) {
+    //
+    //     const time = clock.getElapsedTime();
+    //
+    //     sphere.rotation.y += 0.001;
+    //     sphere.position.x = Math.sin(time) * 0.2;
+    //     sphere.position.z = Math.cos(time) * 0.2;
+    //
+    // }
     renderer.render(scene, camera);
 }
 
